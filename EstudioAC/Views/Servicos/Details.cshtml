@@ -1,0 +1,36 @@
+﻿@model EstudioAC.Model.Servico
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Servico</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.servicoPrestado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.servicoPrestado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.valor)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.valor)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.data)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.data)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
