@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs'
 
+
 @Component({
     selector: 'counter',
     templateUrl: './counter.component.html'
@@ -15,7 +16,6 @@ export class CounterComponent {
     private caminho_: string;
 
     public teste = [{
-        id: "",
         servicoPrestado: "",
         valor: "",
         date: ""
@@ -36,20 +36,20 @@ export class CounterComponent {
 
         http.get(baseUrl + 'api/sistema').subscribe(result => {
             this.dados = result.json();
+            console.log(this.dados);
         }, error => console.error(error));
     }
 
-    salvar() {
-        console.log("Teste");
-        return this.http.post(this.caminho_ + 'api/sistema', this.teste)
-            .map(success => success.status);
-    }
+    
 
+    salvar() {
+        this.http.post(this.caminho_ + 'api/sistema', this.teste)
+        .map(success => success.status);
+        //return this.http.post(this.caminho_ + 'api/sistema', this.teste)): Observable<Response>
+    }
 }
 
-
 interface Counter {
-    id: number;
     servicoPrestado: string;
     valor: string;
     data: string;

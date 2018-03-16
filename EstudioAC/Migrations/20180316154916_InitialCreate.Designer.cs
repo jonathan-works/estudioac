@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
 namespace EstudioAC.Migrations
 {
     [DbContext(typeof(EacContexto))]
-    [Migration("20180314194259_InitialCreate")]
+    [Migration("20180316154916_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +25,12 @@ namespace EstudioAC.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("data");
+
+                    b.Property<string>("servicoPrestado");
+
+                    b.Property<double>("valor");
 
                     b.HasKey("id");
 

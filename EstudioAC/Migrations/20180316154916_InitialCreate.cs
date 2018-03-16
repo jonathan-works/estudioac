@@ -14,7 +14,10 @@ namespace EstudioAC.Migrations
                 columns: table => new
                 {
                     id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    data = table.Column<DateTime>(nullable: false),
+                    servicoPrestado = table.Column<string>(nullable: true),
+                    valor = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {

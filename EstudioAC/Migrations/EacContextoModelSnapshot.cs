@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
 namespace EstudioAC.Migrations
@@ -23,6 +24,12 @@ namespace EstudioAC.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("data");
+
+                    b.Property<string>("servicoPrestado");
+
+                    b.Property<double>("valor");
 
                     b.HasKey("id");
 
